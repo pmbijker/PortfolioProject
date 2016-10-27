@@ -7,23 +7,45 @@ require_once('connect.php');
 ?>
 <!doctype html>
 <html>
-<body>
+  <head>
+  <style type="text/css">
+    * {font-family: Arial, Helvetica, sans-serif;}
+    html, body {height: 100%;}
+    .heading {font-size: 250%; font-weight: bold; margin: auto; width: 75%; text-align: center;}
+    .text {margin: auto; width: 60%; text-align: center; border-style: solid; border-width: 1px}
+    .showy {font-style: italic; font-size: 110%;}
+    .output {text-align: left; border-style: none;}
+    .title {font-size: 150%; font-weight: bold;}
+    .lead {font-size: 105%; font-style: italic;}
+    .placeholder {display: flex; align-items: center; justify-content: center; border-style: solid; border-width: 1px; height: 150px}
+    .comment {font-size: 70%;}
+  </style>
+  </head>
+  <body>
   <a href="logn.php">Logout</a><br/><br/>
-  <h1>Portfolio</h1>
-<p>
-De volgende gebruikers in de database:
-</p>
-<?php
-$stmt = $conn->prepare('SELECT * FROM user WHERE user_id != ?');
-$stmt->bindParam(1, $value);
-$value = 99;
-if ($stmt->execute()) {
-  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo '<br/>Gebruikers id: '.$row['user_id'];
-    echo '<br/>Gebruikers e-mail: '.$row['user_email'];
-    echo '<br/>Gebruikers wachtwoord: '.$row['user_password'];
-  }
-}
-?>
+  <div class="heading">
+    Portfolio Gerhard L. Uderzo
+  </div>
+
+  <div class="text showy">
+    <p>Beste bezoeker,
+    <br/>Dit portfolio is gedurende de periode 2016-2018 op het Grafisch Lyceum Utrecht gemaakt.
+    <br/>Met vriendelijke groet,
+    <br/>Gerhard
+    </p>
+  </div>
+  <br/>
+  <div class="text ">
+    <table>
+    <?php
+      $stmt = $conn->prepare('SELECT * FROM portfolio_item');
+      if($stmt->execute()) {
+        // Your code here to fetch portfolio-items per row ($row)
+
+      }
+      $conn = null;
+    ?>
+    </table>
+  </div>
 </body>
 </html>
