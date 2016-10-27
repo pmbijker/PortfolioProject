@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `portfolio`
+-- Database: `prtflio`
 --
-CREATE DATABASE IF NOT EXISTS `portfolio` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `portfolio`;
+CREATE DATABASE IF NOT EXISTS `prtflio` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `prtflio`;
 
 -- --------------------------------------------------------
 
