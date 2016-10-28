@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['loggedin'])) {
   header('Location: logn.php');
 }
-require_once('connect.php');
+require_once('cnnct.php');
 ?>
 <!doctype html>
 <html>

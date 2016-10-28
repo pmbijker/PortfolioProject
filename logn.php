@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_SESSION['loggedin'] = null;
-require_once('connect.php');
+require_once('cnnct.php');
 ?>
 <!doctype html>
 <html>
