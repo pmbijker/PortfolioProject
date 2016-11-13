@@ -35,11 +35,12 @@ if (!isset($_POST['submit'])) { ?>
 			':password' => $password
 			]
 		)) {
-		  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		  if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		    $_SESSION['loggedin'] = true;
 		    header('Location: indx.php');
+		  }else{
+		  	echo 'Helaas, niet ingelogd';
 		  }
-		  echo 'Helaas, niet ingelogd';
 		}
 	}else{
 		echo 'Alle velden moeten ingevuld worden!';
